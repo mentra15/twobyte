@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features – TwoByte</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #eef3ff, #ffffff);
+    }
+    #resetToast {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body class="text-gray-800 relative">
+
+  <div id="resetToast" class="hidden fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-xl shadow-lg z-50">⏱️ Timer reset successfully!</div>
+
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-extrabold text-blue-700 mb-12 tracking-tight">🚀 Game-Changing Features of <span class="text-gray-900">TwoByte</span></h1>
+
+    <!-- Feature Simulation Bar -->
+    <div class="bg-white/70 backdrop-blur rounded-2xl border border-blue-200 shadow-lg p-6 mb-12">
+      <h2 class="text-2xl font-semibold text-blue-900 mb-4">🎛️ Feature Simulation: Noise Filter</h2>
+      <p class="text-gray-700 mb-4">Toggle between real-world AI feed and TwoByte’s filtered version to experience the difference:</p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-red-50 p-4 rounded-xl border">💬 GPT-3.5 renamed again<br>🔁 Reddit repost<br>📢 Clickbait blog post</div>
+        <div class="bg-green-50 p-4 rounded-xl border font-semibold text-blue-800">✅ GPT-5 Turbo released<br>✅ xAI gets $6B<br>✅ LLaMA 4 goes multilingual</div>
+      </div>
+    </div>
+
+    <!-- Feature Boxes -->
+    <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div class="bg-white/70 backdrop-blur rounded-2xl border border-blue-200 shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-2">🔍 ByteDiff™</h2>
+        <p class="text-gray-700">Understand how the world changed before and after every AI release. From GPT to Claude, track its real-world effects across industries.</p>
+        <p class="mt-2 text-sm text-green-600 font-semibold">📊 Impact Change: +86%</p>
+      </div>
+      <div class="bg-white/70 backdrop-blur rounded-2xl border border-blue-200 shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-2">🚫 AI Noise Filter</h2>
+        <p class="text-gray-700">Say goodbye to fluff. Our AI model filters out noise and surfaces only valuable, high-signal updates in the AI world.</p>
+        <p class="mt-2 text-sm text-green-600 font-semibold">🧠 Focus Boost: 38%</p>
+      </div>
+      <div class="bg-white/70 backdrop-blur rounded-2xl border border-blue-200 shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-2">🛡️ TrustIQ (Credibility Score)</h2>
+        <p class="text-gray-700">Every news piece comes with a trust score based on source reputation, past accuracy, and AI-grade analysis.</p>
+        <p class="mt-2 text-sm text-green-600 font-semibold">🔒 Trust Index: 92%</p>
+      </div>
+      <div class="bg-white/70 backdrop-blur rounded-2xl border border-blue-200 shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-2">🔔 Smart Notifications</h2>
+        <p class="text-gray-700">Only get notified about news that impacts you, your profession, or your tools. Smart, not spammy.</p>
+        <p class="mt-2 text-sm text-green-600 font-semibold">📉 Alerts Reduced: 72%</p>
+      </div>
+    </div>
+
+    <!-- Persona Cards -->
+    <div class="my-16">
+      <h2 class="text-2xl font-semibold text-blue-900 mb-6">🎯 Who is TwoByte For?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/70 backdrop-blur rounded-xl p-4 border shadow">
+          <h3 class="font-semibold text-blue-800 mb-1">🧑‍💻 Dev Mode</h3>
+          <p class="text-sm text-gray-700">Get instantly notified when new APIs, models, and open-source tools drop.</p>
+        </div>
+        <div class="bg-white/70 backdrop-blur rounded-xl p-4 border shadow">
+          <h3 class="font-semibold text-blue-800 mb-1">🎨 AI Artist</h3>
+          <p class="text-sm text-gray-700">Stay in sync with latest text-to-image, video gen, and AI audio tools.</p>
+        </div>
+        <div class="bg-white/70 backdrop-blur rounded-xl p-4 border shadow">
+          <h3 class="font-semibold text-blue-800 mb-1">📈 Startup Founder</h3>
+          <p class="text-sm text-gray-700">Track VC funding, product launches, and market shifts powered by AI.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visionary Slider -->
+    <div class="bg-blue-700 text-white rounded-2xl p-8 mt-16 shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">✨ Imagine This</h2>
+      <div class="space-y-3">
+        <p>🌐 Scroll through AI history like it’s Instagram stories.</p>
+        <p>⚙️ Know what affects your workflow the moment it happens.</p>
+        <p>📲 Understand any new model with just one swipe.</p>
+      </div>
+    </div>
+
+    <!-- Time Saved Section -->
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-6 mt-16 shadow-md">
+      <h2 class="text-2xl font-semibold text-green-800 mb-2">⏳ Your Attention Score</h2>
+      <p class="text-gray-800 text-base mb-3">
+        You've saved <span id="timeSaved" class="font-bold text-green-700">loading...</span> using TwoByte this week.
+      </p>
+      <div class="w-full bg-green-100 rounded-full h-3">
+        <div id="progressBar" class="bg-green-500 h-3 rounded-full" style="width: 0%;"></div>
+      </div>
+      <p id="xpBar" class="text-sm text-green-700 mt-2">🎉 ByteTime XP: calculating...</p>
+      <button onclick="confirmReset()" class="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl text-sm">Reset Timer</button>
+      <p class="text-xs text-gray-500 mt-2">🔁 Resets so far: <span id="resetCount">0</span></p>
+    </div>
+
+    <!-- Footer Attribution -->
+    <div class="text-center text-sm text-gray-600 mt-20 pt-8 border-t border-blue-100">
+      <p class="mb-1">TwoByte is a proud initiative under the <strong>SkillCrate Organization</strong>.</p>
+      <p class="mb-1">This platform is <strong>powered by Mentra</strong> — your AI-first knowledge and productivity ecosystem.</p>
+      <a href="https://mentra15.github.io/mentra15/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Visit Mentra Website →</a>
+    </div>
+  </div>
+
+  <script>
+    let startTime = Date.now();
+
+    function updateTimeDisplay() {
+      let rawTime = Number(localStorage.getItem('twobyteTime')) || 0;
+      let timeSaved = Math.floor(rawTime / 60); // 1 real min = 1 saved min
+      let xp = timeSaved * 10;
+      let progress = Math.min((xp % 1000) / 10, 100);
+
+      document.getElementById('timeSaved').innerText = `${Math.floor(timeSaved / 60)} hr ${timeSaved % 60} min`;
+      document.getElementById('progressBar').style.width = `${progress}%`;
+      document.getElementById('xpBar').innerText = `🎉 ByteTime XP: ${xp % 1000} / 1000`;
+      document.getElementById('resetCount').innerText = localStorage.getItem('resetCount') || 0;
+    }
+
+    function saveTimeInterval() {
+      const now = Date.now();
+      const sessionTime = Math.round((now - startTime) / 1000);
+      const previous = Number(localStorage.getItem('twobyteTime')) || 0;
+      localStorage.setItem('twobyteTime', previous + sessionTime);
+      startTime = now;
+      updateTimeDisplay();
+    }
+
+    function resetTime() {
+      localStorage.setItem('twobyteTime', 0);
+      let count = Number(localStorage.getItem('resetCount')) || 0;
+      localStorage.setItem('resetCount', count + 1);
+      updateTimeDisplay();
+      showToast();
+    }
+
+    function confirmReset() {
+      if (confirm("Are you sure you want to reset your timer?")) {
+        resetTime();
+      }
+    }
+
+    function showToast() {
+      const toast = document.getElementById('resetToast');
+      toast.classList.remove('hidden');
+      toast.style.opacity = '1';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.classList.add('hidden'), 300);
+      }, 2000);
+    }
+
+    window.addEventListener('load', () => {
+      updateTimeDisplay();
+      setInterval(saveTimeInterval, 10000);
+    });
+
+    window.addEventListener('beforeunload', () => {
+      saveTimeInterval();
+    });
+  </script>
+
+</body>
+</html>

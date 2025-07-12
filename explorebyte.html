@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore – TwoByte</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+    }
+    .premium {
+      filter: blur(4px);
+      position: relative;
+    }
+    .premium::after {
+      content: '🔒 Premium - Unlock with 100 XP';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e40af;
+      z-index: 10;
+    }
+    .premium.unlocked {
+      filter: none;
+    }
+    .premium.unlocked::after {
+      display: none;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-extrabold mb-10 text-blue-700 tracking-tight">🧠 Explore AI Bytes</h1>
+
+    <div class="flex justify-between items-center mb-6">
+      <div class="inline-block bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-md">🔵 Latest – July 11, 2025</div>
+      <div id="xpDisplay" class="text-sm text-blue-900 font-semibold">Your Credits: 5000 XP</div>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Free News -->
+      <div class="rounded-2xl p-5 shadow-lg bg-white/70 backdrop-blur border border-blue-100">
+        <h2 class="text-lg font-semibold text-blue-900">OpenAI releases GPT-5 Turbo for enterprise users</h2>
+      </div>
+      <div class="rounded-2xl p-5 shadow-lg bg-white/70 backdrop-blur border border-blue-100">
+        <h2 class="text-lg font-semibold text-blue-900">Meta announces Llama 4 model with enhanced multilingual capability</h2>
+      </div>
+      <div class="rounded-2xl p-5 shadow-lg bg-white/70 backdrop-blur border border-blue-100">
+        <h2 class="text-lg font-semibold text-blue-900">Elon Musk’s xAI secures $6B funding for AGI development</h2>
+      </div>
+
+      <!-- 25 Premium News Cards -->
+      <script>
+        const premiumTitles = [
+          "Samsung partners with Google to develop AI chipsets",
+          "Amazon launches Bedrock Studio for GenAI apps",
+          "NVIDIA unveils Blackwell B200 AI GPU",
+          "Anthropic introduces Claude with long-term memory",
+          "IBM’s WatsonX models now open-source",
+          "AI helps detect cancer earlier in real-time trials",
+          "Adobe Firefly 3 adds image-to-video support",
+          "Notion AI launches real-time summarization",
+          "YouTube introduces AI-generated video highlights",
+          "Snapchat integrates GenAI filters for AR lenses",
+          "Perplexity AI raises $300M to rival Google Search",
+          "X (Twitter) deploys full-scale AI moderation",
+          "Midjourney v7 rolls out 3D object generation",
+          "LinkedIn adds AI-powered resume builder",
+          "Twitch tests real-time AI translation for streams",
+          "Zoom integrates GPT models for live meetings",
+          "Hugging Face releases 500B parameter model",
+          "Replit launches code interpreter in IDE",
+          "GitHub Copilot X expands to mobile dev",
+          "Slack AI features improve search and recaps",
+          "Spotify AI DJ expands to more countries",
+          "AI-generated podcast voices trend globally",
+          "Reddit launches AI-assisted thread summaries",
+          "Grammarly AI releases academic writing mode",
+          "Bing AI chat gets upgraded with memory"
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const container = document.querySelector(".grid");
+          premiumTitles.forEach(title => {
+            const div = document.createElement("div");
+            div.className = "rounded-2xl p-5 shadow-lg bg-white/70 backdrop-blur border border-blue-100 premium";
+            div.innerHTML = `<h2 class="text-lg font-semibold text-blue-900">${title}</h2>`;
+            container.appendChild(div);
+          });
+        });
+      </script>
+    </div>
+  </div>
+
+  <script>
+    const XP_COST_PER_PREMIUM = 100;
+
+    function getXP() {
+      return Number(localStorage.getItem('twobyteXP')) || 5000;
+    }
+
+    function setXP(val) {
+      localStorage.setItem('twobyteXP', val);
+      document.getElementById('xpDisplay').textContent = `Your Credits: ${val} XP`;
+    }
+
+    function unlockPremiumNews() {
+      let xp = getXP();
+      if (xp < XP_COST_PER_PREMIUM) {
+        alert('Not enough XP to unlock premium content!');
+        return;
+      }
+      setXP(xp - XP_COST_PER_PREMIUM);
+      document.querySelectorAll('.premium').forEach(el => {
+        el.classList.add('unlocked');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!localStorage.getItem('twobyteXP')) {
+        setXP(5000);
+      } else {
+        setXP(getXP());
+      }
+
+      const unlockBtn = document.createElement('button');
+      unlockBtn.innerText = '🔓 Unlock Premium News (100 XP)';
+      unlockBtn.className = 'bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 mb-10 rounded-xl block mx-auto';
+      unlockBtn.onclick = unlockPremiumNews;
+      document.querySelector('body').prepend(unlockBtn);
+    });
+  </script>
+
+</body>
+</html>

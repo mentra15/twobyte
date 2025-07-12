@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TwoByte – AI-Powered News</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0A1128',
+            accent: '#38BDF8',
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-white to-blue-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-white shadow-lg border-b border-gray-200">
+    <div class="flex items-center space-x-3">
+      <img src="https://i.ibb.co/RTTYwwFR/Whats-App-Image-2025-07-11-at-11-25-45-PM.jpg" alt="TwoByte Logo" class="h-10 w-10 rounded-full object-cover">
+      <h1 class="text-2xl font-extrabold text-primary">TwoByte</h1>
+    </div>
+    <div class="flex items-center gap-6 text-sm font-semibold text-primary">
+      <div id="xpStatus" class="bg-blue-100 px-3 py-1 rounded-xl text-blue-700">⭐ XP: loading...</div>
+      <div id="byteStatus" class="bg-green-100 px-3 py-1 rounded-xl text-green-700">📰 Bytes Left: loading...</div>
+      <nav class="space-x-4">
+        <a href="featurebyte.html" class="hover:text-accent transition">Features</a>
+        <a href="explorebyte.html" class="hover:text-accent transition">Bytes</a>
+        <a href="aboutbyte.html" class="hover:text-accent transition">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-24 px-6 bg-gradient-to-r from-blue-100 via-white to-blue-100">
+    <div class="bg-white/80 backdrop-blur-xl shadow-2xl border border-blue-100 max-w-3xl mx-auto p-10 rounded-3xl">
+      <h2 class="text-5xl font-extrabold mb-4 text-primary">Smarter News. Shorter Bytes.</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        TwoByte = AI + You. Bite-sized brilliance, curated by intelligence.
+      </p>
+      <a href="#feed" class="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-xl shadow-md hover:bg-sky-500 transition">
+        Explore 
+      </a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+    <div class="bg-white shadow-xl border border-gray-200 rounded-2xl p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+      <h3 class="text-xl font-bold mb-2 text-blue-700">⚡ Lightning Fast</h3>
+      <p class="text-gray-600">News updated every hour using AI pipelines.</p>
+    </div>
+    <div class="bg-white shadow-xl border border-gray-200 rounded-2xl p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+      <h3 class="text-xl font-bold mb-2 text-blue-700">🧠 AI Curated</h3>
+      <p class="text-gray-600">Zero bias. Zero noise. Maximum clarity.</p>
+    </div>
+    <div class="bg-white shadow-xl border border-gray-200 rounded-2xl p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+      <h3 class="text-xl font-bold mb-2 text-blue-700">📱 Mobile Friendly</h3>
+      <p class="text-gray-600">Designed for on-the-go updates with a native app feel.</p>
+    </div>
+  </section>
+
+  <!-- Live News Feed Section -->
+  <section id="feed" class="bg-white py-20 px-6">
+    <h2 class="text-4xl font-extrabold text-center mb-12 text-primary">Latest Bites</h2>
+    <div id="news" class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto"></div>
+    <p id="newsStatus" class="text-center text-gray-500 text-sm mt-6">Loading fresh news...</p>
+  </section>
+
+  <!-- Unlock More Section -->
+  <div class="text-center mt-12">
+    <h3 class="text-xl font-bold text-primary mb-4">🔓 Need More Bytes?</h3>
+    <p class="text-gray-600 mb-4">You've used your free 200 bytes. Use XP to unlock more:</p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <button onclick="unlockBytes(1)" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl">Unlock 1 Byte (100 XP)</button>
+      <button onclick="unlockBytes(25)" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl">Unlock 25 Bytes (2000 XP)</button>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-4 text-primary">What is TwoByte?</h2>
+    <p class="text-gray-700 text-lg mb-4">
+      TwoByte is the future of news: built on AI, powered by you. A product of Mentra, our mission is to bring you the fastest, cleanest, and smartest headlines — all in one tap.
+    </p>
+    <p class="text-gray-600 text-md mt-4 italic">
+      Why “TwoByte”? Because it's powered by <strong>two minds</strong>: AI + You. Our name reflects this harmony — delivering byte-sized news with intelligence and purpose.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white bg-primary">
+    © 2025 TwoByte. A Mentra Product.
+  </footer>
+
+  <!-- XP + Byte Logic -->
+  <script>
+    const MAX_FREE_BYTES = 200;
+    const XP_PER_BYTE = 100;
+    const XP_BUNDLE = 2000;
+
+    function getXP() {
+      return Number(localStorage.getItem('twobyteXP')) || 0;
+    }
+
+    function getBytesLeft() {
+      return Number(localStorage.getItem('twobyteBytesLeft')) || MAX_FREE_BYTES;
+    }
+
+    function updateStatus() {
+      document.getElementById('xpStatus').innerText = `⭐ XP: ${getXP()}`;
+      document.getElementById('byteStatus').innerText = `📰 Bytes Left: ${getBytesLeft()}`;
+    }
+
+    function unlockBytes(count) {
+      let currentXP = getXP();
+      let cost = count === 25 ? XP_BUNDLE : XP_PER_BYTE;
+      if (currentXP < cost) {
+        alert('Not enough XP!');
+        return;
+      }
+      localStorage.setItem('twobyteXP', currentXP - cost);
+      localStorage.setItem('twobyteBytesLeft', getBytesLeft() + count);
+      updateStatus();
+      alert(`🎉 Unlocked ${count} more byte(s)!`);
+    }
+
+    window.addEventListener('load', () => {
+      if (!localStorage.getItem('twobyteXP')) localStorage.setItem('twobyteXP', 5000);
+      if (!localStorage.getItem('twobyteBytesLeft')) localStorage.setItem('twobyteBytesLeft', MAX_FREE_BYTES);
+      updateStatus();
+    });
+  </script>
+
+  <!-- Fetch Live News -->
+  <script>
+    const newsContainer = document.getElementById("news");
+    const newsStatus = document.getElementById("newsStatus");
+
+    fetch("https://mentraai.app.n8n.cloud/webhook/twobyte-news")
+      .then(response => response.json())
+      .then(data => {
+        if (!Array.isArray(data) || data.length === 0) {
+          newsStatus.innerText = "No news available right now.";
+          return;
+        }
+
+        newsContainer.innerHTML = "";
+        data.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "bg-blue-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition border border-blue-200";
+          div.innerHTML = `
+            <h4 class="text-lg font-semibold mb-2 text-blue-800">${item.title}</h4>
+            <p class="text-gray-700 text-sm"><a href="${item.link}" target="_blank" class="text-accent hover:underline">Read more</a></p>
+            <small class="text-xs text-gray-500">${new Date(item.pubDate).toLocaleString()}</small>
+          `;
+          newsContainer.appendChild(div);
+        });
+
+        newsStatus.innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+      })
+      .catch(error => {
+        console.error("Error loading news:", error);
+        newsStatus.innerText = "⚠️ Failed to load news. Try again later.";
+      });
+  </script>
+
+</body>
+</html>
